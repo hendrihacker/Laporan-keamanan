@@ -386,6 +386,23 @@
             background: linear-gradient(45deg, #6f42c1, #9b59b6);
         }
         
+        .water-icon {
+            background: linear-gradient(45deg, #17a2b8, #138496);
+        }
+        
+        .readiness-icon {
+            background: linear-gradient(45deg, #fd7e14, #e67e22);
+        }
+
+        .patroli-icon {
+            background: linear-gradient(45deg, #20c997, #12b886);
+        }
+
+        /* New icon for lost items */
+        .lost-icon {
+            background: linear-gradient(45deg, #dc3545, #c82333);
+        }
+        
         .card-content {
             color: #6c757d;
             margin-bottom: 25px;
@@ -982,6 +999,9 @@
         .card:nth-child(3) { animation-delay: 0.3s; }
         .card:nth-child(4) { animation-delay: 0.4s; }
         .card:nth-child(5) { animation-delay: 0.5s; }
+        .card:nth-child(6) { animation-delay: 0.6s; }
+        .card:nth-child(7) { animation-delay: 0.7s; }
+        .card:nth-child(8) { animation-delay: 0.8s; }
         
         .team-member {
             animation: fadeIn 0.5s ease-out forwards;
@@ -1001,7 +1021,6 @@ body {
     background-attachment: fixed;
     background-size: 100% 100%;
 }
-</style>
 </style>
     <div class="dashboard">
         <!-- Sidebar -->
@@ -1114,7 +1133,7 @@ body {
                     <div class="card-content">
                     </div>
                     <div class="card-footer">
-                        <a href="https://docs.google.com/spreadsheets/d/16txVUMAVQxPRc8RySLDtyLDPCD_L3YQL5rm-GjmL9wo/edit?gid=0#gid=0" target="_blank" class="btn">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSf5vzYj1YcuX_OeYeXZyxrkOn7_gaIWpaJgVp3gB0R5f3fhbQ/viewform" target="_blank" class="btn">
                             <i class="fas fa-external-link-alt"></i>
                             Buka Laporan
                         </a>
@@ -1157,6 +1176,24 @@ body {
                     </div>
                 </div>
                 
+                <!-- Laporan Patroli Harian (BARU) -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Patroli Harian</div>
+                        <div class="card-icon patroli-icon">
+                            <i class="fas fa-shoe-prints"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeCVJe2eOynv9bmBvmXCXLkNZwXdg_MG9DcnGJ0D5U7xZqdKQ/viewform" target="_blank" class="btn">
+                            <i class="fas fa-external-link-alt"></i>
+                            Buka Form Patroli
+                        </a>
+                    </div>
+                </div>
+
                 <!-- Laporan Patroli -->
                 <div class="card">
                     <div class="card-header">
@@ -1175,7 +1212,7 @@ body {
                         </div>
                         </div>
     
-                            <!-- Laporan Pengecekan Tandon Air Bersih (BARU) -->
+                            <!-- Laporan Pengecekan Tandon Air Bersih -->
                             <div class="card">
                             <div class="card-header">
                             <div class="card-title">Pengecekan Tandon Air Bersih</div>
@@ -1190,6 +1227,42 @@ body {
                             <i class="fas fa-external-link-alt"></i>
                              Buka Form
 
+                        </a>
+                    </div>
+                </div>
+
+                <!-- KESIAGAAN PELAYANAN -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Kesiagaan Pelayanan</div>
+                        <div class="card-icon readiness-icon">
+                            <i class="fas fa-ambulance"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSftCJMRtrMJcWOHVg1XzzCE1m-M_Zvk_0I6XqQNzfpSfbjQpg/viewform" target="_blank" class="btn">
+                            <i class="fas fa-external-link-alt"></i>
+                            Buka Form Kesiagaan
+                        </a>
+                    </div>
+                </div>
+
+                <!-- KEHILANGAN BARANG - NEW CARD -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Kehilangan Barang</div>
+                        <div class="card-icon lost-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSepLrGheO6j5obLFwoAukhsveA8Mr_6y9EQ6HVy2yCKEkDWHA/viewform" target="_blank" class="btn">
+                            <i class="fas fa-external-link-alt"></i>
+                            Lapor Kehilangan
                         </a>
                     </div>
                 </div>
