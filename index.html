@@ -7,8 +7,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-
-
         :root {
             --primary: #2a5c8d;
             --secondary: #3a9efd;
@@ -31,6 +29,10 @@
             font-family: 'Poppins', sans-serif;
             background-color: #f5f7fa;
             color: #333;
+            background-image: url('susi.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
         }
         
         .dashboard {
@@ -229,31 +231,6 @@
             line-height: 1;
         }
 
-        .logo-text {
-            display: none;
-        }
-
-        /* Mobile responsive */
-        @media (max-width: 992px) {
-            .sidebar.collapsed .hospital-logo {
-                padding: 10px 5px;
-            }
-            
-            .sidebar.collapsed .main-logo-section {
-                flex-direction: column;
-                gap: 8px;
-            }
-
-            .sidebar.collapsed .hospital-name {
-                display: none;
-            }
-
-            .sidebar.collapsed .partner-logos {
-                flex-direction: column;
-                gap: 6px;
-            }
-        }
-        
         .nav-menu {
             list-style: none;
             padding: 0 15px;
@@ -366,24 +343,12 @@
             background: linear-gradient(45deg, var(--success), #5cb85c);
         }
         
-        .generator-icon {
-            background: linear-gradient(45deg, var(--warning), #f0ad4e);
-        }
-        
         .review-icon {
             background: linear-gradient(45deg, var(--danger), #d9534f);
         }
         
         .daily-icon {
             background: linear-gradient(45deg, var(--info), #17a2b8);
-        }
-        
-        .team-icon {
-            background: linear-gradient(45deg, #6f42c1, #9b59b6);
-        }
-        
-        .patrol-icon {
-            background: linear-gradient(45deg, #6f42c1, #9b59b6);
         }
         
         .water-icon {
@@ -398,7 +363,6 @@
             background: linear-gradient(45deg, #20c997, #12b886);
         }
 
-        /* New icon for lost items */
         .lost-icon {
             background: linear-gradient(45deg, #dc3545, #c82333);
         }
@@ -454,7 +418,6 @@
             margin-right: 15px;
         }
         
-        /* Team Section Styles */
         .team-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -475,20 +438,6 @@
         .team-member:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-        
-        .member-avatar {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            margin: 0 auto 15px;
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 30px;
-            font-weight: bold;
         }
         
         .member-name {
@@ -512,24 +461,6 @@
             margin-top: 15px;
         }
         
-        .contact-btn {
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #f0f2f5;
-            color: var(--primary);
-            transition: all 0.3s;
-        }
-        
-        .contact-btn:hover {
-            background: var(--primary);
-            color: white;
-            transform: scale(1.1);
-        }
-        
         .section-title {
             font-size: 22px;
             color: var(--dark);
@@ -548,7 +479,6 @@
             background: linear-gradient(90deg, var(--primary), var(--secondary));
         }
 
-        /* Maps Section Styles */
         .maps-container {
             margin-top: 30px;
             background: white;
@@ -664,23 +594,6 @@
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
 
-        .map-iframe-container::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(42, 92, 141, 0.1);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
-        }
-
-        .map-iframe-container:hover::after {
-            opacity: 1;
-        }
-
         .map-sidebar {
             background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
             padding: 30px;
@@ -740,103 +653,6 @@
             margin: 0;
         }
 
-        .map-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-        }
-
-        .map-btn {
-            flex: 1;
-            padding: 12px 16px;
-            border: none;
-            border-radius: 8px;
-            font-size: 13px;
-            font-weight: 500;
-            text-decoration: none;
-            text-align: center;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .map-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s;
-        }
-
-        .map-btn:hover::before {
-            left: 100%;
-        }
-
-        .map-btn-primary {
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
-            color: white;
-        }
-
-        .map-btn-primary:hover {
-            background: linear-gradient(45deg, #1f4b7a, #2980b9);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(42, 92, 141, 0.3);
-        }
-
-        .map-btn-secondary {
-            background: linear-gradient(45deg, #f8f9fa, #e9ecef);
-            color: var(--dark);
-            border: 1px solid #dee2e6;
-        }
-
-        .map-btn-secondary:hover {
-            background: linear-gradient(45deg, #e9ecef, #dee2e6);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-
-        .map-btn i {
-            margin-right: 8px;
-            font-size: 14px;
-        }
-
-        .hospital-stats {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-top: 25px;
-            padding-top: 25px;
-            border-top: 1px solid #e9ecef;
-        }
-
-        .stat-item {
-            text-align: center;
-            padding: 15px 10px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-        }
-
-        .stat-number {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 5px;
-        }
-
-        .stat-label {
-            font-size: 11px;
-            color: #6c757d;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
         .floating-badge {
             position: absolute;
             top: 20px;
@@ -892,99 +708,7 @@
             }
         }
 
-        @media (max-width: 1024px) {
-            .map-content {
-                grid-template-columns: 1fr;
-            }
-
-            .map-sidebar {
-                padding: 25px;
-            }
-
-            .hospital-stats {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .map-header {
-                padding: 20px;
-            }
-
-            .map-sidebar {
-                padding: 20px;
-            }
-
-            .map-iframe {
-                height: 300px;
-            }
-
-            .map-actions {
-                flex-direction: column;
-            }
-
-            .hospital-stats {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .detail-item {
-                padding: 12px;
-            }
-
-            .detail-icon {
-                width: 35px;
-                height: 35px;
-            }
-        }
-        
-        @media (max-width: 992px) {
-            .sidebar {
-                width: 70px;
-            }
-            
-            .sidebar.collapsed .logo-text,
-            .sidebar.collapsed .nav-link span {
-                display: none;
-                opacity: 0;
-            }
-            
-            .sidebar.collapsed .logo-container {
-                justify-content: center;
-                padding: 10px;
-            }
-            
-            .sidebar.collapsed .logo {
-                margin-right: 0;
-            }
-            
-            .main-content {
-                margin-left: 70px;
-            }
-            
-            .toggle-sidebar {
-                display: block;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .cards-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .team-container {
-                grid-template-columns: 1fr;
-            }
-
-            .map-iframe {
-                height: 300px;
-            }
-            
-            .page-title h1 {
-                font-size: 24px;
-            }
-        }
-        
-        /* Animation for cards */
+        /* Animations */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -1000,8 +724,6 @@
         .card:nth-child(4) { animation-delay: 0.4s; }
         .card:nth-child(5) { animation-delay: 0.5s; }
         .card:nth-child(6) { animation-delay: 0.6s; }
-        .card:nth-child(7) { animation-delay: 0.7s; }
-        .card:nth-child(8) { animation-delay: 0.8s; }
         
         .team-member {
             animation: fadeIn 0.5s ease-out forwards;
@@ -1011,17 +733,85 @@
         .team-member:nth-child(2) { animation-delay: 0.3s; }
         .team-member:nth-child(3) { animation-delay: 0.4s; }
         .team-member:nth-child(4) { animation-delay: 0.5s; }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .map-content {
+                grid-template-columns: 1fr;
+            }
+
+            .map-sidebar {
+                padding: 25px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .sidebar {
+                width: 70px;
+            }
+            
+            .sidebar .hospital-name,
+            .sidebar .partner-logos,
+            .sidebar .nav-link span {
+                display: none;
+            }
+            
+            .sidebar .logo-container {
+                justify-content: center;
+                padding: 10px;
+            }
+            
+            .main-content {
+                margin-left: 70px;
+            }
+            
+            .toggle-sidebar {
+                display: block;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cards-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .team-container {
+                grid-template-columns: 1fr;
+            }
+
+            .map-header {
+                padding: 20px;
+            }
+
+            .map-sidebar {
+                padding: 20px;
+            }
+
+            .map-iframe {
+                height: 300px;
+            }
+
+            .detail-item {
+                padding: 12px;
+            }
+
+            .detail-icon {
+                width: 35px;
+                height: 35px;
+            }
+            
+            .page-title h1 {
+                font-size: 24px;
+            }
+        }
+
+        /* Background untuk p */
+        p {
+            background-image: url('Warna.png');
+        }
     </style>
 </head>
 <body>
-<style>
-body {
-    background-image: url('susi.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100% 100%;
-}
-</style>
     <div class="dashboard">
         <!-- Sidebar -->
         <div class="sidebar" id="sidebar">
@@ -1067,12 +857,6 @@ body {
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="fas fa-bolt"></i>
-                        <span>Genset</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
                         <i class="fas fa-comment-alt"></i>
                         <span>Ulasan</span>
                     </a>
@@ -1113,6 +897,7 @@ body {
                         </div>
                     </div>
                     <div class="card-content">
+                        <!-- Konten dapat ditambahkan di sini -->
                     </div>
                     <div class="card-footer">
                         <a href="https://docs.google.com/spreadsheets/d/1MZQ_1zCx2Db4syKzVmq9eczAFv2P23Uw3BUcO0dlf9k/edit?gid=888408629#gid=888408629" target="_blank" class="btn">
@@ -1131,27 +916,10 @@ body {
                         </div>
                     </div>
                     <div class="card-content">
+                        <!-- Konten dapat ditambahkan di sini -->
                     </div>
                     <div class="card-footer">
                         <a href="https://docs.google.com/forms/d/e/1FAIpQLSf5vzYj1YcuX_OeYeXZyxrkOn7_gaIWpaJgVp3gB0R5f3fhbQ/viewform" target="_blank" class="btn">
-                            <i class="fas fa-external-link-alt"></i>
-                            Buka Laporan
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Laporan Pemanasan Generator -->
-                <div class="card">
-                    <div class="card-header">
-                        <div class="card-title">Laporan Mesin Genset</div>
-                        <div class="card-icon generator-icon">
-                            <i class="fas fa-bolt"></i>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                    </div>
-                    <div class="card-footer">
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdfoQUd_zW8BrWP5qAJ2wqCdMUHPM7R7c2tR36VKGiFomQeFA/viewform?usp=header" target="_blank" class="btn">
                             <i class="fas fa-external-link-alt"></i>
                             Buka Laporan
                         </a>
@@ -1167,6 +935,7 @@ body {
                         </div>
                     </div>
                     <div class="card-content">
+                        <!-- Konten dapat ditambahkan di sini -->
                     </div>
                     <div class="card-footer">
                         <a href="https://docs.google.com/forms/d/e/1FAIpQLSdUD5wL2vqHzN9dJZkCqKFkGe39KcC8qhNW-jPeyMvrnM8JsQ/viewform?usp=header" target="_blank" class="btn">
@@ -1176,7 +945,7 @@ body {
                     </div>
                 </div>
                 
-                <!-- Laporan Patroli Harian (BARU) -->
+                <!-- Laporan Patroli Harian -->
                 <div class="card">
                     <div class="card-header">
                         <div class="card-title">Patroli Harian</div>
@@ -1185,6 +954,7 @@ body {
                         </div>
                     </div>
                     <div class="card-content">
+                        <!-- Konten dapat ditambahkan di sini -->
                     </div>
                     <div class="card-footer">
                         <a href="https://docs.google.com/forms/d/e/1FAIpQLSeCVJe2eOynv9bmBvmXCXLkNZwXdg_MG9DcnGJ0D5U7xZqdKQ/viewform" target="_blank" class="btn">
@@ -1193,40 +963,22 @@ body {
                         </a>
                     </div>
                 </div>
-
-                <!-- Laporan Patroli -->
+    
+                <!-- Laporan Pengecekan Tandon Air Bersih -->
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-title">Laporan Temuan Patroli</div>
-                        <div class="card-icon patrol-icon">
-                            <i class="fas fa-shield-alt"></i>
+                        <div class="card-title">Pengecekan Tandon Air Bersih</div>
+                        <div class="card-icon water-icon">
+                            <i class="fas fa-water"></i>
                         </div>
                     </div>
                     <div class="card-content">
+                        <!-- Konten dapat ditambahkan di sini -->
                     </div>
                     <div class="card-footer">
-                        <a href="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdPcGaIqbGF6XMdn9-EUvaED2HlXZIJoQlJVKjB0NQ-MfS1hw/formResponse?pli=1" target="_blank" class="btn">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc2WeLuAGc-t7o51N6hXbZ2ThWXaykkGImu1nM2mBz2lput0w/viewform" target="_blank" class="btn">
                             <i class="fas fa-external-link-alt"></i>
-                            Buka Laporan
-                         </a>
-                        </div>
-                        </div>
-    
-                            <!-- Laporan Pengecekan Tandon Air Bersih -->
-                            <div class="card">
-                            <div class="card-header">
-                            <div class="card-title">Pengecekan Tandon Air Bersih</div>
-                            <div class="card-icon water-icon">
-                            <i class="fas fa-water"></i>
-                            </div>
-                            </div>
-                            <div class="card-content">
-                            </div>
-                            <div class="card-footer">
-                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSc2WeLuAGc-t7o51N6hXbZ2ThWXaykkGImu1nM2mBz2lput0w/viewform" target="_blank" class="btn">
-                            <i class="fas fa-external-link-alt"></i>
-                             Buka Form
-
+                            Buka Form
                         </a>
                     </div>
                 </div>
@@ -1240,6 +992,7 @@ body {
                         </div>
                     </div>
                     <div class="card-content">
+                        <!-- Konten dapat ditambahkan di sini -->
                     </div>
                     <div class="card-footer">
                         <a href="https://docs.google.com/forms/d/e/1FAIpQLSftCJMRtrMJcWOHVg1XzzCE1m-M_Zvk_0I6XqQNzfpSfbjQpg/viewform" target="_blank" class="btn">
@@ -1249,7 +1002,7 @@ body {
                     </div>
                 </div>
 
-                <!-- KEHILANGAN BARANG - NEW CARD -->
+                <!-- KEHILANGAN BARANG -->
                 <div class="card">
                     <div class="card-header">
                         <div class="card-title">Kehilangan Barang</div>
@@ -1258,6 +1011,7 @@ body {
                         </div>
                     </div>
                     <div class="card-content">
+                        <!-- Konten dapat ditambahkan di sini -->
                     </div>
                     <div class="card-footer">
                         <a href="https://docs.google.com/forms/d/e/1FAIpQLSepLrGheO6j5obLFwoAukhsveA8Mr_6y9EQ6HVy2yCKEkDWHA/viewform" target="_blank" class="btn">
@@ -1274,39 +1028,35 @@ body {
             <h2 class="section-title" id="team">Tim Security RS Mata Achmad Wardi</h2>
             
             <div class="team-container">
-                <!-- Hendri Hermawan -->
                 <div class="team-member">
                     <h3 class="member-name">Hendri Hermawan</h3>
                     <p class="member-position">Penanggung jawab Security</p>
                     <div class="member-contact">
-                     </i></a>
+                        <!-- Kontak dapat ditambahkan di sini -->
                     </div>
                 </div>
                 
-                <!-- Wahyudi -->
                 <div class="team-member">
                     <h3 class="member-name">Wahyudi</h3>
                     <p class="member-position">Anggota Security</p>
                     <div class="member-contact">
-                      </i></a>
+                        <!-- Kontak dapat ditambahkan di sini -->
                     </div>
                 </div>
                 
-                <!-- Erwin -->
                 <div class="team-member">
                     <h3 class="member-name">Erwin</h3>
                     <p class="member-position">Anggota Security</p>
                     <div class="member-contact">
-                      </i></a>
+                        <!-- Kontak dapat ditambahkan di sini -->
                     </div>
                 </div>
                 
-                <!-- Irfan -->
                 <div class="team-member">
                     <h3 class="member-name">Irfan</h3>
                     <p class="member-position">Anggota Security</p>
                     <div class="member-contact">
-                      </i></a>
+                        <!-- Kontak dapat ditambahkan di sini -->
                     </div>
                 </div>
             </div>
@@ -1332,7 +1082,6 @@ body {
                             <span>Lokasi Aktif</span>
                         </div>
                         
-                        <!-- Map Preview Image as fallback -->
                         <div class="map-preview-overlay">
                             <div class="preview-content">
                                 <i class="fas fa-map-marked-alt"></i>
@@ -1394,9 +1143,4 @@ body {
         });
     </script>
 </body>
-<style>
-p {
-  background-image: url('Warna.png');
-}
-</style>
 </html>
